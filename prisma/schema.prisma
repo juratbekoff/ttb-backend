@@ -1,0 +1,72 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Admin {
+  id        Int      @id @default(autoincrement())
+  name      String
+  username  String   @unique
+  password  String
+  token     String   @unique @default("INACTIVE")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Applications {
+  id        Int      @id @default(autoincrement())
+  name      String
+  surname   String
+  email     String
+  phone     String
+  sentBy    String   @default("WEBSITE")
+  message   String   @db.Text
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Pages {
+  id        Int      @id @default(autoincrement())
+  name      String   @unique
+  title     String
+  content   String   @db.Text
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Catalogues {
+  id        Int      @id @default(autoincrement())
+  title     String
+  image     String
+  descr     String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Institutions {
+  id        Int      @id @default(autoincrement())
+  title     String
+  image     String
+  descr     String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Posts {
+  id        Int      @id @default(autoincrement())
+  title     String
+  image     String
+  descr     String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Session {
+  id    Int    @id @default(autoincrement())
+  key   String @unique
+  value String
+}
