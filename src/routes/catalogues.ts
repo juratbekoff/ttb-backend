@@ -31,6 +31,11 @@ catalogues.post("/", upload.single("image"), async (req, res) => {
 catalogues.get("/", async (req, res) => {
   try {
     let getCatalogues = await cataloguesService.getAll();
+
+    getCatalogues.map((elem) => {
+      elem.image = `${process.env.API_URL!}/catalogs/img/${elem.image}`;
+    });
+
     res.status(200).json({
       message: `All catalogues!`,
       data: getCatalogues,
@@ -50,6 +55,9 @@ catalogues.get("/:id", async (req, res) => {
         message: `catalogue with ID ${id} is not found!`,
       });
     }
+
+    catalogue.image = `${process.env.API_URL!}/catalogs/img/${catalogue.image}`;
+
     res.status(200).json({
       message: `ID ${id} catalogue info`,
       data: catalogue,

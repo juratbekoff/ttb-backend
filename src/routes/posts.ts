@@ -31,7 +31,7 @@ posts.get("/", async (req, res) => {
   try {
     let getposts = await postsService.getAll();
 
-    getposts.map((elem) => {
+    getposts.map((elem: { image: string }) => {
       elem.image = `http://localhost:8080/api/posts/img/${elem.image}`;
     });
 

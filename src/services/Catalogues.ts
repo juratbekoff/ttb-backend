@@ -16,6 +16,10 @@ class Catalogues {
 
   getAll = async () => await client.catalogues.findMany();
 
+  getCount = async () => {
+    return await client.catalogues.count();
+  };
+
   getOne = async (id: number) =>
     await client.catalogues.findUnique({ where: { id } });
 
@@ -26,6 +30,7 @@ class Catalogues {
       },
     });
   };
+
   deleteOne = async (id: number) => {
     return await client.catalogues.delete({
       where: {

@@ -16,6 +16,10 @@ class Institutions {
 
   getAll = async () => await client.institutions.findMany();
 
+  getCount = async () => {
+    return await client.institutions.count();
+  };
+
   getOne = async (id: number) =>
     await client.institutions.findUnique({ where: { id } });
 

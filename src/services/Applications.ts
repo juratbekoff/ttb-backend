@@ -19,6 +19,10 @@ class Application {
 
   getAll = async () => await client.applications.findMany();
 
+  getCount = async () => {
+    return await client.applications.count()
+  }
+
   getOne = async (id: number) => {
     return await client.applications.findUnique({ where: { id } });
   };

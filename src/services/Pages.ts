@@ -19,6 +19,10 @@ class Pages {
   getOne = async (id: number) =>
     await client.pages.findUnique({ where: { id } });
 
+  getCount = async () => {
+    return await client.pages.count();
+  };
+
   getByName = async (name: string) =>
     await client.pages.findUnique({ where: { name } });
 

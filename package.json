@@ -15,7 +15,8 @@
     "@types/jsonwebtoken": "^9.0.2",
     "@types/multer": "^1.4.7",
     "@types/node": "^20.2.3",
-    "prisma": "^4.16.0-dev.34",
+    "@types/node-fetch": "^2.6.4",
+    "prisma": "^4.16.0-dev.64",
     "ts-node": "^10.9.1",
     "typescript": "^5.0.4"
   },
@@ -27,7 +28,7 @@
     "@grammyjs/storage-prisma": "^2.3.0",
     "@grammyjs/storage-redis": "^2.3.0",
     "@grammyjs/storage-supabase": "^2.3.0",
-    "@prisma/client": "^4.16.0-dev.34",
+    "@prisma/client": "^4.16.0-dev.64",
     "@types/cors": "^2.8.13",
     "@types/dotenv": "^8.2.0",
     "@types/express": "^4.17.17",

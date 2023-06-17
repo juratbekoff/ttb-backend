@@ -19,6 +19,10 @@ class Posts {
   getOne = async (id: number) =>
     await client.posts.findUnique({ where: { id } });
 
+  getCount = async () => {
+    return await client.posts.count();
+  };
+
   getByLimit = async (limit: number) => {
     return await client.posts.findMany({
       take: limit,
