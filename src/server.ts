@@ -14,7 +14,7 @@ app.use(cors());
 
 app.use(express.static("public"));
 
-app.use(morgan("common"));
+app.use(morgan("combined"));
 app.use("/api", router);
 
 app.listen(serverConfig.port, () => {
