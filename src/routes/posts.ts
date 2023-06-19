@@ -30,11 +30,6 @@ posts.post("/", upload.single("image"), async (req, res) => {
 posts.get("/", async (req, res) => {
   try {
     let getposts = await postsService.getAll();
-
-    getposts.map((elem: { image: string }) => {
-      elem.image = `http://localhost:8080/api/posts/img/${elem.image}`;
-    });
-
     res.status(200).json({
       message: `All posts!`,
       data: getposts,
