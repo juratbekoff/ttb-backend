@@ -25,5 +25,7 @@ jobs:
 #     - run: cd /root/urganch-ttb/server
     - run: npm install
     - run: npm run build --if-present
+    - run: pm2 restart 0
+    - run: pm2 logs 0
 #     - run: npm test
     # - run: rm -rf /var/www/build && mv ./build /var/www/
