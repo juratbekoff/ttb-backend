@@ -30,11 +30,6 @@ institutions.post("/", upload.single("image"), async (req, res) => {
 institutions.get("/", async (req, res) => {
   try {
     let getInstitutions = await institutionsService.getAll();
-
-    getInstitutions.map((elem) => {
-      elem.image = `${process.env.API_URL!}/institutions/img/${elem.image}`;
-    });
-
     res.status(200).json({
       message: `All institutions!`,
       data: getInstitutions,
@@ -54,10 +49,6 @@ institutions.get("/:id", async (req, res) => {
         message: `institution with ID ${id} is not found!`,
       });
     }
-
-    institution.image = `${process.env.API_URL!}/institutions/img/${
-      institution.image
-    }`;
 
     res.status(200).json({
       message: `ID ${id} institution info`,
