@@ -69,7 +69,7 @@ posts.get("/get/:id", async (req, res) => {
         message: `post with ID ${id} is not found!`,
       });
     }
-    post.image = `http://localhost:8080/api/posts/img/${post.image}`;
+    post.image = `http://api.urganchttb.uz:8080/api/posts/img/${post.image}`;
     res.status(200).json({
       message: `ID ${id} post info`,
       data: post,
