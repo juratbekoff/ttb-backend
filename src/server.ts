@@ -1,5 +1,4 @@
 import express from "express";
-import cors from "cors";
 import { serverConfig } from "./configs";
 import router from "./routes";
 import { bot } from "./bot/config/bot";
@@ -10,8 +9,6 @@ const app = express();
 bot;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
-app.use(cors());
 
 app.use(express.static("public"));
 
