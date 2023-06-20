@@ -32,4 +32,8 @@ dashboard.get("/", async (req, res) => {
   }
 });
 
+dashboard.get("/test", (req, res) => {
+  res.json("Ok, change bo'ldi!");
+});
+
 export default dashboard;
