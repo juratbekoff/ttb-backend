@@ -82,9 +82,6 @@ posts.get("/", function (req, res) { return __awaiter(void 0, void 0, void 0, fu
                 return [4 /*yield*/, services_1.postsService.getAll()];
             case 1:
                 getposts = _a.sent();
-                getposts.map(function (elem) {
-                    elem.image = "http://localhost:8080/api/posts/img/".concat(elem.image);
-                });
                 res.status(200).json({
                     message: "All posts!",
                     data: getposts,
