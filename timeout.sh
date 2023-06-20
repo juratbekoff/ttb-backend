@@ -2,7 +2,7 @@
 # Execute the command passed as an argument and terminate it after a certain duration
 
 # Set the timeout duration (in seconds)
-TIMEOUT_DURATION=300
+TIMEOUT_DURATION=50
 
 # Start the command in the background
 "$@" &
