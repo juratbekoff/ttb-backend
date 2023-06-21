@@ -1,29 +1,10 @@
 import { applications } from "../types";
 
 export const appMessage = (data: applications, user?: string) => {
-  let msg = `
-name: ${data.name};
-surname: ${data.surname};
-email: ${data.email};
-phone: ${data.phone};
-message: ${data.message};
-sentBy: ${data.sentBy}    
-
-user: @${user || "Aniqlanmagan!"}
-    `;
-
-  return msg;
-};
-
-export const allCorrect = (data: applications) => {
-  let msg = `Barcha ma'lumotlar to'grimi?
-
-ism: ${data.name};
-familiya: ${data.surname};
-email: ${data.email};
-telefon raqam: ${data.phone};
-xabar: ${data.message};
-  `;
-
+  let msg = `<code>👤Ism-familiya: </code><b>${data.name} ${data.surname}</b>
+<code>📥 Email: </code><b>${data.email}</b>
+<code>📞 Telefon raqam: </code><b>${data.phone}</b>
+<code>🔖 Xabar: </code><b>${data.message}</b>
+<code>🌐 Platforma: </code><b>${data.sentBy ? data.sentBy : "WEBSITE"}</b>`;
   return msg;
 };

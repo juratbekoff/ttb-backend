@@ -27,7 +27,7 @@ type MyContext = Context & SessionFlavor<SessionData> & ConversationFlavor;
 type MyConversation = Conversation<MyContext>;
 
 const bot = new Bot<MyContext>(
-  "5631561780:AAH2w7oH1SRvkpxv3LvVubQ1vQRvfnCRQEk"
+  "5852696197:AAGo4T76NIVrStGDPuMWN76lyi0TofD5zD8"
 );
 
 bot.use(
