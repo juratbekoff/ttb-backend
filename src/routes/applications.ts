@@ -14,7 +14,9 @@ applications.post("/", body(appValidator), async (req, res) => {
   try {
     let data: applications = req.body;
     await applicationService.create(data);
-    bot.api.sendMessage("@astix_uz", appMessage(data));
+    bot.api.sendMessage("@astix_uz", appMessage(data), {
+      parse_mode: "HTML",
+    });
     res.status(201).json({
       message: `Applciation submitted successfully!`,
     });

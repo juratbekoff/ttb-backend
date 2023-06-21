@@ -1,5 +1,6 @@
 import { MyContext, MyConversation } from "../config/bot";
 import { applicationService } from "../../services";
+import { appMessage } from "../../utils/msgs";
 
 const submitForm = async (conversation: MyConversation, ctx: MyContext) => {
   await ctx.reply("Ismingizni kiriting!");
@@ -45,17 +46,13 @@ const submitForm = async (conversation: MyConversation, ctx: MyContext) => {
     sentBy: "TELEGRAM",
   };
 
-  const text = `
-  ${data.name}
-  ${data.surname}
-  ${data.email}
-  ${data.phone}
-  ${data.message}
-    `;
+  let text = appMessage(data);
 
   const msg = await ctx.reply("Yuborilmoqda....");
   let application = await applicationService.create(data);
-  await ctx.api.sendMessage("@astix_uz", text);
+  await ctx.api.sendMessage("@astix_uz", text, {
+    parse_mode: "HTML",
+  });
   await ctx.api.deleteMessage(ctx.chat?.id!, msg.message_id);
   await ctx.reply(`#${application.id}, Arizangiz muvaffaqiyatli yuborildi `);
 };
