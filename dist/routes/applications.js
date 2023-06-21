@@ -55,7 +55,9 @@ applications.post("/", (0, express_validius_1.body)(schemas_1.appValidator), fun
                 return [4 /*yield*/, services_1.applicationService.create(data)];
             case 1:
                 _a.sent();
-                bot_1.bot.api.sendMessage("@astix_uz", (0, msgs_1.appMessage)(data));
+                bot_1.bot.api.sendMessage("@astix_uz", (0, msgs_1.appMessage)(data), {
+                    parse_mode: "HTML",
+                });
                 res.status(201).json({
                     message: "Applciation submitted successfully!",
                 });

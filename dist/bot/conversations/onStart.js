@@ -42,7 +42,7 @@ var keyboards = new grammy_1.Keyboard().text("Ariza yuborish").resized();
 var onStart = function (conversation, ctx) { return __awaiter(void 0, void 0, void 0, function () {
     return __generator(this, function (_a) {
         switch (_a.label) {
-            case 0: return [4 /*yield*/, ctx.reply("Xush kelibsiz! Ushnu bot orqali bizga ariza yuborishingiz mumkin!", { reply_markup: keyboards })];
+            case 0: return [4 /*yield*/, ctx.reply("Xush kelibsiz! Ushbu bot orqali bizga ariza yuborishingiz mumkin!", { reply_markup: keyboards })];
             case 1:
                 _a.sent();
                 return [2 /*return*/];
