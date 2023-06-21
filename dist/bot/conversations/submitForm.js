@@ -112,7 +112,7 @@ var submitForm = function (conversation, ctx) { return __awaiter(void 0, void 0,
                 return [4 /*yield*/, services_1.applicationService.create(data)];
             case 12:
                 application = _g.sent();
-                return [4 /*yield*/, ctx.api.sendMessage("@astix_uz", text, {
+                return [4 /*yield*/, ctx.api.sendMessage("@urganchttb_uz", text, {
                         parse_mode: "HTML",
                     })];
             case 13:
