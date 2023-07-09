@@ -5,6 +5,7 @@ import {
   institutionsService,
   pagesService,
   postsService,
+  lshService,
 } from "../services";
 
 const dashboard = Router();
@@ -16,6 +17,7 @@ dashboard.get("/", async (req, res) => {
     let postCount = await postsService.getCount();
     let instCount = await institutionsService.getCount();
     let pageCount = await pagesService.getCount();
+    let lshCount = await lshService.getCount();
 
     res.status(200).json({
       message: `Total counts!`,
@@ -25,15 +27,12 @@ dashboard.get("/", async (req, res) => {
         postCount,
         instCount,
         pageCount,
+        lshCount,
       },
     });
   } catch (error) {
     console.log(error);
   }
-});
-
-dashboard.get("/test", (req, res) => {
-  res.json("Ok, change bo'ldi!");
 });
 
 export default dashboard;
