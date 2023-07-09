@@ -35,3 +35,10 @@ export type posts = {
   image: string;
   descr: string;
 };
+
+export type leadership = {
+  name: string;
+  position: string;
+  phone: string;
+  email: string;
+};

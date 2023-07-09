@@ -10,6 +10,7 @@ import cataloguesRouter from "./catalogues";
 import institutionsRouter from "./institutions";
 import postsRouter from "./posts";
 import dashboardRouter from "./dashboard";
+import leadership from "./leadership";
 
 const router = Router();
 
@@ -20,5 +21,6 @@ router.use("/catalogs", cataloguesRouter);
 router.use("/institutions", institutionsRouter);
 router.use("/posts", postsRouter);
 router.use("/dashboard", dashboardRouter);
+router.use("/leadership", leadership);
 
 export default router;

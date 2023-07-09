@@ -1,9 +1,8 @@
 import { cataloguesService } from "../services";
-import express, { Router } from "express";
+import { Router } from "express";
 import { catalogues } from "../types";
 import { log } from "console";
 import { upload } from "../utils";
-import path from "path";
 
 const catalogues = Router();
 
@@ -63,7 +62,7 @@ catalogues.get("/:id", async (req, res) => {
   }
 });
 
-// get by ID
+// get by imageID
 catalogues.get("/img/:image", async (req, res) => {
   try {
     let { image } = req.params;
