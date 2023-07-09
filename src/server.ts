@@ -6,8 +6,9 @@ import morgan from "morgan";
 import cors from "cors";
 
 const app = express();
-
 bot;
+
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 

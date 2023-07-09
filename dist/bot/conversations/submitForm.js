@@ -38,6 +38,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.submitForm = void 0;
 var services_1 = require("../../services");
+var msgs_1 = require("../../utils/msgs");
 var submitForm = function (conversation, ctx) { return __awaiter(void 0, void 0, void 0, function () {
     var name, surname, email, phone, message, data, text, msg, application;
     var _a, _b, _c, _d, _e, _f;
@@ -104,14 +105,16 @@ var submitForm = function (conversation, ctx) { return __awaiter(void 0, void 0,
                     message: ctx.session.message,
                     sentBy: "TELEGRAM",
                 };
-                text = "\n  ".concat(data.name, "\n  ").concat(data.surname, "\n  ").concat(data.email, "\n  ").concat(data.phone, "\n  ").concat(data.message, "\n    ");
+                text = (0, msgs_1.appMessage)(data);
                 return [4 /*yield*/, ctx.reply("Yuborilmoqda....")];
             case 11:
                 msg = _g.sent();
                 return [4 /*yield*/, services_1.applicationService.create(data)];
             case 12:
                 application = _g.sent();
-                return [4 /*yield*/, ctx.api.sendMessage("@astix_uz", text)];
+                return [4 /*yield*/, ctx.api.sendMessage("@urganchttb_uz", text, {
+                        parse_mode: "HTML",
+                    })];
             case 13:
                 _g.sent();
                 return [4 /*yield*/, ctx.api.deleteMessage((_f = ctx.chat) === null || _f === void 0 ? void 0 : _f.id, msg.message_id)];

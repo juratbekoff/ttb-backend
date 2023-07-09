@@ -79,5 +79,8 @@ dashboard.get("/", function (req, res) { return __awaiter(void 0, void 0, void 0
         }
     });
 }); });
+dashboard.get("/test", function (req, res) {
+    res.json("Ok, change bo'ldi!");
+});
 exports.default = dashboard;
 //# sourceMappingURL=dashboard.js.map

@@ -82,9 +82,6 @@ catalogues.get("/", function (req, res) { return __awaiter(void 0, void 0, void 
                 return [4 /*yield*/, services_1.cataloguesService.getAll()];
             case 1:
                 getCatalogues = _a.sent();
-                getCatalogues.map(function (elem) {
-                    elem.image = "".concat(process.env.API_URL, "/catalogs/img/").concat(elem.image);
-                });
                 res.status(200).json({
                     message: "All catalogues!",
                     data: getCatalogues,

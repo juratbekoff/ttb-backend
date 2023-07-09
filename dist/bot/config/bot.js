@@ -41,7 +41,7 @@ var grammy_1 = require("grammy");
 var conversations_1 = require("@grammyjs/conversations");
 var submitForm_1 = require("../conversations/submitForm");
 var onStart_1 = require("../conversations/onStart");
-var bot = new grammy_1.Bot("5631561780:AAH2w7oH1SRvkpxv3LvVubQ1vQRvfnCRQEk");
+var bot = new grammy_1.Bot("5852696197:AAGo4T76NIVrStGDPuMWN76lyi0TofD5zD8");
 exports.bot = bot;
 bot.use((0, grammy_1.session)({
     initial: function () { return ({}); },
