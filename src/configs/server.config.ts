@@ -1,5 +1,3 @@
-import os from "os";
-
 export default {
   port: process.env.PORT,
   info: () => {
