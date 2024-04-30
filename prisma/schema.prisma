@@ -75,3 +75,14 @@ model Leadership {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
+
+model OpenDocuments {
+  id              Int      @id @default(autoincrement())
+  title           String
+  cover_image     String?
+  file_url        String?
+  file_size       String?
+  downloads_count Int      @default(0)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}

@@ -63,6 +63,4 @@ bot.hears(
   async (ctx) => await ctx.conversation.enter("submitForm")
 );
 
-bot.start();
-
 export { MyContext, bot, MyConversation };

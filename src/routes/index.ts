@@ -1,7 +1,5 @@
-import { Router } from "express";
+import {Router} from "express";
 import dotenv from "dotenv";
-dotenv.config();
-
 // imports
 import adminRouter from "./admin";
 import applicationRouter from "./applications";
@@ -11,6 +9,9 @@ import institutionsRouter from "./institutions";
 import postsRouter from "./posts";
 import dashboardRouter from "./dashboard";
 import leadership from "./leadership";
+import openDocuments from "./open-documents";
+
+dotenv.config();
 
 const router = Router();
 
@@ -22,5 +23,6 @@ router.use("/institutions", institutionsRouter);
 router.use("/posts", postsRouter);
 router.use("/dashboard", dashboardRouter);
 router.use("/leadership", leadership);
+router.use("/open-documents", openDocuments);
 
 export default router;

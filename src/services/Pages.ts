@@ -1,52 +1,52 @@
-import { PrismaClient } from "@prisma/client";
-import { pages } from "../types";
+import {PrismaClient} from "@prisma/client";
+import {pages} from "../types";
 
 const client = new PrismaClient();
 
 class Pages {
-  create = async (data: pages) => {
-    return await client.pages.create({
-      data: {
-        name: data.name,
-        title: data.title,
-        content: data.content,
-      },
-    });
-  };
+    create = async (data: pages) => {
+        return await client.pages.create({
+            data: {
+                name: data.name,
+                title: data.title,
+                content: data.content,
+            },
+        });
+    };
 
-  getAll = async () => await client.pages.findMany();
+    getAll = async () => await client.pages.findMany();
 
-  getOne = async (id: number) =>
-    await client.pages.findUnique({ where: { id } });
+    getOne = async (id: number) =>
+        await client.pages.findUnique({where: {id}});
 
-  getCount = async () => {
-    return await client.pages.count();
-  };
+    getCount = async () => {
+        return await client.pages.count();
+    };
 
-  getByName = async (name: string) =>
-    await client.pages.findUnique({ where: { name } });
+    getByName = async (name: string) =>
+        await client.pages.findUnique({where: {name}});
 
-  deleteOne = async (id: number) => {
-    return await client.pages.delete({
-      where: {
-        id,
-      },
-    });
-  };
+    deleteOne = async (id: number) => {
+        return await client.pages.delete({
+            where: {
+                id,
+            },
+        });
+    };
 
-  deleteAll = async () => await client.pages.deleteMany();
+    deleteAll = async () => await client.pages.deleteMany();
 
-  update = async (id: number, data: pages) => {
-    return await client.pages.update({
-      where: {
-        id,
-      },
-      data: {
-        title: data.title,
-        content: data.content,
-      },
-    });
-  };
+    update = async (id: number, data: pages) => {
+        return await client.pages.update({
+            where: {
+                id,
+            },
+            data: {
+                title: data.title,
+                content: data.content,
+            },
+        });
+    };
 }
 
 export default Pages;

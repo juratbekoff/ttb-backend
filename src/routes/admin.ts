@@ -1,10 +1,10 @@
-import { adminService } from "../services";
-import { Router } from "express";
-import { admin } from "../types";
-import { generateToken, tokenFormation } from "../utils";
-import { log } from "console";
-import { register, login } from "../schemas";
-import { body } from "@verve-neowise/express-validius";
+import {adminService} from "../services";
+import {Router} from "express";
+import {admin} from "../types";
+import {generateToken, tokenFormation} from "../utils";
+import {log} from "console";
+import {login, register} from "../schemas";
+import {body} from "@verve-neowise/express-validius";
 
 const adminRouter = Router();
 

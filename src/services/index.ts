@@ -6,6 +6,7 @@ import Institutions from "./Institutions";
 import Pages from "./Pages";
 import Posts from "./Posts";
 import Leadership from "./Leadership";
+import OpenDocuments from "./OpenDocuments";
 
 // exports
 export const adminService = new Admin();
@@ -15,3 +16,4 @@ export const institutionsService = new Institutions();
 export const pagesService = new Pages();
 export const postsService = new Posts();
 export const lshService = new Leadership();
+export const openDocumentsService = new OpenDocuments();
