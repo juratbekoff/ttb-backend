@@ -1,4 +1,4 @@
-import {Router} from "express";
+import { Router } from "express";
 import dotenv from "dotenv";
 // imports
 import adminRouter from "./admin";
