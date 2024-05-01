@@ -17,7 +17,18 @@ openDocuments.post("/", upload('open-documents').fields([
         let files = req.files as { [fieldname: string]: Express.Multer.File[] };
 
         let file = files['file']?.[0];
+        if (file?.size > 10 * 1024 * 1024) {
+            return res.status(400).json({
+                message: "File 10MB dan katta bo'lmasligi kerak!"
+            })
+        }
+
         let cover_image = files['cover_image']?.[0];
+        if (cover_image?.size > 10 * 1024 * 1024) {
+            return res.status(400).json({
+                message: "Muqova rasmi 10MB dan katta bo'lmasligi kerak!"
+            })
+        }
 
         // create
         const createDocument = await openDocumentsService.create({

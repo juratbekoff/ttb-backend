@@ -12,5 +12,9 @@ const createStorage = (basePath: string,) =>
     });
 
 // @ts-ignore
-export const upload = (basePath?: string = "",) => multer({storage: createStorage(basePath,)});
+export const upload = (basePath?: string = "",) => multer({
+    storage: createStorage(basePath), limits: {
+        fields: 10 * 1024 * 1024,
+    }
+});
 
