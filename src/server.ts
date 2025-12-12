@@ -16,7 +16,7 @@ app.use(express.static("public"));
 app.use(cors());
 
 app.use(morgan("combined"));
-app.use("/api", router);
+app.use("/", router);
 
 bot.start({
   onStart(botInfo) {
