@@ -15,6 +15,10 @@ import {
 import { submitForm } from "../conversations/submitForm";
 import { onStart } from "../conversations/onStart";
 
+import * as dotenv from "dotenv"
+
+dotenv.config()
+
 interface SessionData {
   name: string;
   surname: string;
@@ -27,7 +31,7 @@ type MyContext = Context & SessionFlavor<SessionData> & ConversationFlavor;
 type MyConversation = Conversation<MyContext>;
 
 const bot = new Bot<MyContext>(
-  "5852696197:AAGo4T76NIVrStGDPuMWN76lyi0TofD5zD8"
+  process.env.BOT_TOKEN
 );
 
 bot.use(
