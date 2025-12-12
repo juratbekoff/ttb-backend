@@ -50,7 +50,7 @@ const submitForm = async (conversation: MyConversation, ctx: MyContext) => {
 
   const msg = await ctx.reply("Yuborilmoqda....");
   let application = await applicationService.create(data);
-  await ctx.api.sendMessage("@urganchttb_uz", text, {
+  await ctx.api.sendMessage("-1003367245363", text, {
     parse_mode: "HTML",
   });
   await ctx.api.deleteMessage(ctx.chat?.id!, msg.message_id);
