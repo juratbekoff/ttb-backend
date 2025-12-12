@@ -31,7 +31,7 @@ type MyContext = Context & SessionFlavor<SessionData> & ConversationFlavor;
 type MyConversation = Conversation<MyContext>;
 
 const bot = new Bot<MyContext>(
-  process.env.BOT_TOKEN
+  process.env.BOT_TOKEN!
 );
 
 bot.use(
